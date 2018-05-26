@@ -16,7 +16,7 @@ server_address = (adresa, port)
 n = 10000
 window_size = 10
 first_value = 1
-send_timeout = .001
+send_timeout = .1
 buffsize = 4096
 receive_check_interval = .00001
 confirmed_set = Set([])
@@ -53,6 +53,8 @@ while True:
         if int_mesaj > n:
             break
         mesaj = str(int_mesaj)
+        if mesaj in confirmed_set:
+            continue
         logging.info('Sending %s', mesaj)
         time.sleep(send_timeout)
         sent = sock.sendto(mesaj, server_address)

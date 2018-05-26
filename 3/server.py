@@ -21,6 +21,7 @@ while True:
     data = conexiune.recv(1)
     if data == -1:
         break
+    conexiune.send('A')
     logging.info('"%s"', data)
 
 logging.info("Ending connection")
