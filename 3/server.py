@@ -7,7 +7,7 @@ logging.basicConfig(format = u'[LINE:%(lineno)d]# %(levelname)-8s [%(asctime)s] 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
-port = 10000
+port = 10360
 adresa = '198.13.0.14'
 server_address = (adresa, port)
 sock.bind(server_address)
